@@ -18,16 +18,52 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-       //   saveBook();
+         //   saveBook();
         //  loadAllBooks();
-        loadAllBooksWithCriteria();
+       // loadAllBooksWithCriteria();
+      //  findBook();
+      //  findBookWithQuery();
+        updateBook();
+        //deleteBook();
 
+    }
+
+    // session.update(book);//update data from table
+    //session.remove(book); //remove data from table
+
+    private static void findBookWithQuery() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+
+        Query query = session.createQuery("FROM Book where id=:data");
+        query.setParameter("data","B001");
+        Book book = (Book) query.uniqueResult();
+        System.out.println(book);
+    }
+
+    //need session for every new method call
+
+    private static void findBook() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+
+        Book book = session.load(Book.class, "B001");
+        System.out.println(book);
+
+    }
+
+    private static void updateBook() {
+        Book book=new Book("B001","Hath","M Wickramasinghe");
+
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction(); //begin transaction
+        session.update(book);
+        transaction.commit(); //commit that transaction
+
+        session.close(); //close the session
     }
 
     //without HQL to load all books (Using CriteriaBuilder)
     private static void loadAllBooksWithCriteria() {
         Session session= FactoryConfiguration.getInstance().getSession();
-
         //create the criteria
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<Book> query = criteriaBuilder.createQuery(Book.class);
@@ -49,9 +85,6 @@ public class Main {
         }
 
     }
-
-    //session.remove(book); //remove data from table
-    // session.update(book);//update data from table
 
     private static void saveBook() {
 
