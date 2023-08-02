@@ -23,13 +23,23 @@ public class Main {
        // loadAllBooksWithCriteria();
       //  findBook();
       //  findBookWithQuery();
-        updateBook();
-        //deleteBook();
+       // updateBook();
+        deleteBook();
 
     }
 
-    // session.update(book);//update data from table
-    //session.remove(book); //remove data from table
+    private static void deleteBook() {
+        Book book=new Book("B002","Hath Pana","M Wickramasinghe");
+
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction(); //begin transaction
+        session.remove(book);
+        transaction.commit(); //commit that transaction
+
+        session.close(); //close the session
+    }
+
+
 
     private static void findBookWithQuery() {
         Session session= FactoryConfiguration.getInstance().getSession();
