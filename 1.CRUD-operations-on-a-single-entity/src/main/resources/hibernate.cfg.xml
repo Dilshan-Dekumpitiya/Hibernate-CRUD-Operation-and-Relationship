@@ -4,12 +4,19 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
-    <!-- <property name="connection.username"/> -->
-    <!-- <property name="connection.password"/> -->
+    <!--//database connection url-->
+    <property name="connection.url">jdbc:mysql://localhost:3306/assignment?createDatabaseIfNotExist=true</property>
+    <!--jdbc driver class-->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <!--db username-->
+    <property name="connection.username">root</property>
+    <!--db password-->
+    <property name="connection.password">1234</property>
 
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <!--my sql version-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!--print sql query-->
+    <property name="hibernate.show_sql">true</property>
   </session-factory>
 </hibernate-configuration>
