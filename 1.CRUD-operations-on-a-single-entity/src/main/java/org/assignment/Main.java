@@ -7,8 +7,11 @@ import org.assignment.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+<<<<<<< HEAD
 import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 import org.hibernate.query.criteria.JpaCriteriaQuery;
+=======
+>>>>>>> c2c78ab8b8825284ac1f5e2e87455959db077482
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -18,6 +21,7 @@ public class Main {
     public static void main(String[] args) {
 
        //   saveBook();
+<<<<<<< HEAD
         //  loadAllBooks();
         loadAllBooksWithCriteria();
 
@@ -39,6 +43,12 @@ public class Main {
     }
 
     //Using HQL
+=======
+          loadAllBooks();
+
+    }
+
+>>>>>>> c2c78ab8b8825284ac1f5e2e87455959db077482
     private static void loadAllBooks() {
         Session session= FactoryConfiguration.getInstance().getSession();
         Query query = session.createQuery("FROM Book ");//HQL --> Hibernate Query Language
