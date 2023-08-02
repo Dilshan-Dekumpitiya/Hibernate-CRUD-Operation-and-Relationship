@@ -8,8 +8,6 @@ This is a Hibernate-CRUD-Operation-and-Relationship project
 
 ![alt text](https://github.com/Dilshan-Dekumpitiya/Hibernate-CRUD-Operation-and-Relationship/blob/master/relationship.jpg)
 
-</br>
-
 ## Getting Started
 
 1. Clone or download the repository to your local machine.
