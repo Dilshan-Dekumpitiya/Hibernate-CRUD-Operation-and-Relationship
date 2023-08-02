@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="1.CRUD-operations-on-a-single-entity" />
+        <module name="2.one-to-one" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="1.CRUD-operations-on-a-single-entity" target="11" />
+      <module name="2.one-to-one" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

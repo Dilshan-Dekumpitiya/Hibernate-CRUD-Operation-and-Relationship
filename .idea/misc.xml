@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/1.CRUD-operations-on-a-single-entity/pom.xml" />
+        <option value="$PROJECT_DIR$/2.one-to-one/pom.xml" />
       </list>
     </option>
   </component>
