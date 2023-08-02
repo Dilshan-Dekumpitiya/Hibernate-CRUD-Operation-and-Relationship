@@ -8,4 +8,13 @@ This is a Hibernate-CRUD-Operation-and-Relationship project
 
 ![alt text](https://github.com/Dilshan-Dekumpitiya/Hibernate-CRUD-Operation-and-Relationship/blob/master/relationship.jpg)
 
+</br>
+
+## Getting Started
+
+1. Clone or download the repository to your local machine.
+2. Set up the necessary dependencies and ensure they are added to the classpath of your project.
+3. Open the project in your preferred Java IDE.
+4. Locate the `AppInitializer` class and run the `main` method to launch the application.
+
 
