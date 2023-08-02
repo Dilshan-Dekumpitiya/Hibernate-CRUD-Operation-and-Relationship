@@ -7,15 +7,15 @@ import org.hibernate.Transaction;
 
 public class Main {
     public static void main(String[] args) {
-        Book book=new Book("B001","Madol Duuwa","Martin Wickramasinghe");
+        Book book=new Book("B001","Madol Duuwa","M Wickramasinghe");
 
         //start session
         Session session= FactoryConfiguration.getInstance().getSession(); //Session is Interface (Therefore can't initialize with new keyword)
 
         Transaction transaction=session.beginTransaction(); //begin transaction
-        session.persist(book); //add data to table
-        //session.remove(customer); //remove data from table
-        // session.update(customer);//update data from table
+       // session.persist(book); //add data to table
+        //session.remove(book); //remove data from table
+         session.update(book);//update data from table
 
         transaction.commit(); //commit that transaction
 
