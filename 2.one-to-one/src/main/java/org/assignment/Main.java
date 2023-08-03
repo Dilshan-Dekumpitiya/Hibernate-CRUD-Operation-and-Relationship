@@ -11,16 +11,23 @@ import org.hibernate.Transaction;
 public class Main {
     public static void main(String[] args) {
 
-        //save book & author
-        Book book=new Book("B003","Dangara waliga","Kamal");
-        Author author=new Author("A001","Dilshan","Matugama");
-        Session session= FactoryConfiguration.getInstance().getSession();
-        Transaction transaction=session.beginTransaction(); //begin transaction
+        //use try with resource
+        try(Session session= FactoryConfiguration.getInstance().getSession();){
+            //save book & author
+            Author author=new Author();
+            author.setId("A001");
+            author.setName("Dilshan");
+            author.setAddress("Matugama");
 
-        session.persist(book); //add book data to table
-        session.persist(author); //add author data to table
-        transaction.commit(); //commit that transaction
+            Book book=new Book("Dangara waliga",2500,author);
 
-        session.close(); //close the session
+            Transaction transaction=session.beginTransaction(); //begin transaction
+
+            session.persist(book); //add book data to table
+            session.persist(author); //add author data to table
+
+            transaction.commit(); //commit that transaction
+
+        }
     }
 }

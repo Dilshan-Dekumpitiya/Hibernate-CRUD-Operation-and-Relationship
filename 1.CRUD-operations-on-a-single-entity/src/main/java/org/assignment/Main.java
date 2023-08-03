@@ -19,18 +19,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-         //   saveBook();
+            saveBook();
          //  loadAllBooks();
         // loadAllBooksWithCriteria();
         //  findBook();
         //  findBookWithQuery();
         // updateBook();
-            deleteBook();
+        //    deleteBook();
     }
 
     //need session for every new method call
     private static void saveBook() {
-        Book book=new Book("B002","Hath Pana","M Wickramasinghe");
+        Book book=new Book("B002","Hath Pana",2500);
 
         //start session
         Session session= FactoryConfiguration.getInstance().getSession(); //Session is Interface (Therefore can't initialize with new keyword)
@@ -86,7 +86,7 @@ public class Main {
     }
 
     private static void updateBook() {
-        Book book=new Book("B001","Hath","M Wickramasinghe");
+        Book book=new Book("B001","Hath",2500);
 
         Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
@@ -95,13 +95,8 @@ public class Main {
         session.close();
     }
 
-
-
-
-
-
     private static void deleteBook() {
-        Book book=new Book("B002","Hath Pana","M Wickramasinghe");
+        Book book=new Book("B002","Hath Pana",2500);
 
         Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction(); //begin transaction
@@ -110,9 +105,6 @@ public class Main {
 
         session.close(); //close the session
     }
-
-
-
 
 }
 

@@ -19,5 +19,5 @@ public class Book {
     @Column(name = "bookId")
     private String id;
     private String bookName;
-    private String authorName;
+    private double price;
 }
