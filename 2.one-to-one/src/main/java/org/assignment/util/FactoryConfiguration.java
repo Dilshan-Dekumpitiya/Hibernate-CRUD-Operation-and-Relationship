@@ -1,5 +1,6 @@
 package org.assignment.util;
 
+import org.assignment.entity.Author;
 import org.assignment.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,10 +13,12 @@ public class FactoryConfiguration {
 
     private  FactoryConfiguration(){
         //configuration part
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Book.class);
+        Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(Book.class)
+                .addAnnotatedClass(Author.class); //add entities as addAnnotatedClass
+
         //addAnnotatedClass(Customer.class) --> Define entity as db table to hibernate (@Entity in entity package)
         sessionFactory = configuration.buildSessionFactory();
-
     }
 
     public static FactoryConfiguration getInstance(){ //get factory configuration instance

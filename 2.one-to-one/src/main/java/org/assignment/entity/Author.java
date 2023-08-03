@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "Author")
+@Table(name = "author")
 public class Author {
 
     @Id
-    @Column(name = "authorId")
+    @Column(name = "authorId",unique = true,nullable = false)
     private String id;
+    @Column(name = "author_name",nullable = false)
     private String name;
+    @Column(name = "author_address")
     private String address;
 }
