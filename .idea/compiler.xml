@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="1.CRUD-operations-on-a-single-entity" />
         <module name="2.one-to-one" />
         <module name="3.one-to-many" />
+        <module name="4.many-to-many" />
+        <module name="1.CRUD-operations-on-a-single-entity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="1.CRUD-operations-on-a-single-entity" target="11" />
       <module name="2.one-to-one" target="11" />
       <module name="3.one-to-many" target="11" />
+      <module name="4.many-to-many" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
