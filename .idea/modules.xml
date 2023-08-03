@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1.CRUD-operations-on-a-single-entity/1.CRUD-operations-on-a-single-entity.iml" filepath="$PROJECT_DIR$/1.CRUD-operations-on-a-single-entity/1.CRUD-operations-on-a-single-entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.one-to-one/2.one-to-one.iml" filepath="$PROJECT_DIR$/2.one-to-one/2.one-to-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.one-to-many/3.one-to-many.iml" filepath="$PROJECT_DIR$/3.one-to-many/3.one-to-many.iml" />
     </modules>
   </component>
 </project>
