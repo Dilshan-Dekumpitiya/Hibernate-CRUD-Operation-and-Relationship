@@ -26,8 +26,17 @@ public class Book {
 
     private double price;
 
+    //Used this to --> No need to Add column to created Associate table
     @ManyToMany(mappedBy = "books") //using mappedBy create associate table
     private List<Author> authors;
+
+    //Used this to --> Need to Add columns to created Associate table
+    /*@OneToMany(mappedBy = "book",
+            cascade ={
+                CascadeType.ALL
+            }
+    )
+    private List<BookDetail> details; */
 
     public Book(String bookName, double price,List<Author> authors) {
         this.bookName=bookName;

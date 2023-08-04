@@ -25,8 +25,17 @@ public class Author {
     @Column(name = "author_address")
     private String address;
 
+    //Used this to --> No need to Add column to created Associate table
     @ManyToMany
     private List<Book> books;
+
+    //Used this to --> Need to Add columns to created Associate table
+    /*@OneToMany(mappedBy = "author",
+            cascade ={
+                    CascadeType.ALL
+            }
+    )
+    private List<BookDetail> details;*/
 
     public Author(String id,String name,String address){
         this.id=id;

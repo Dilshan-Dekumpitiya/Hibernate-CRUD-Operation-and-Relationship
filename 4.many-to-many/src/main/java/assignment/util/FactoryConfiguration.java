@@ -15,7 +15,9 @@ public class FactoryConfiguration {
         //configuration part
         Configuration configuration = new Configuration().configure()
                 .addAnnotatedClass(Book.class)
-                .addAnnotatedClass(Author.class); //add entities as addAnnotatedClass
+                .addAnnotatedClass(Author.class)
+              //  .addAnnotatedClass(BookDetail.class)
+                ; //add entities as addAnnotatedClass
 
         //addAnnotatedClass(Customer.class) --> Define entity as db table to hibernate (@Entity in entity package)
         sessionFactory = configuration.buildSessionFactory();
