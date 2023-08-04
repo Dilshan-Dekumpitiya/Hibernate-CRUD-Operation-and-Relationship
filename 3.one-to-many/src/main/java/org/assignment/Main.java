@@ -29,6 +29,7 @@ public class Main {
         books2.add(book3);
         books2.add(book4);
 
+        //set books to authors book list
         author1.setBooks(books1);
         author2.setBooks(books2);
 

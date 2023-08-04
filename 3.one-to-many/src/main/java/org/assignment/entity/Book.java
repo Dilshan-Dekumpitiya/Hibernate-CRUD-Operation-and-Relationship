@@ -25,6 +25,7 @@ public class Book {
     private double price;
 
     @ManyToOne
+    @JoinColumn(name = "authorID",nullable = false) //nullable should false
     private Author author;
 
     public Book(String bookName, double price, Author author) {

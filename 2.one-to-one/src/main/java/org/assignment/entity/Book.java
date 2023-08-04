@@ -26,6 +26,7 @@ public class Book {
     private double price;
 
     @OneToOne
+    @JoinColumn(name = "authorID",unique = true) //new join column name and should unique
     private Author author; //pass AuthorId to Book entity table
 
     public Book(String bookName,double price, Author author) {

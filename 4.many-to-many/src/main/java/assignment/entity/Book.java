@@ -26,7 +26,7 @@ public class Book {
 
     private double price;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany(mappedBy = "books") //using mappedBy create associate table
     private List<Author> authors;
 
     public Book(String bookName, double price,List<Author> authors) {
