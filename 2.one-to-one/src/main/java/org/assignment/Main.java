@@ -11,7 +11,8 @@ import org.hibernate.Transaction;
 public class Main {
     public static void main(String[] args) {
 
-        //use try with resource
+        /* use try with resource --> firstly try session,
+        Another time can't run the Session, after that close the session object */
         try(Session session= FactoryConfiguration.getInstance().getSession();){
             //save book & author
             Author author=new Author();

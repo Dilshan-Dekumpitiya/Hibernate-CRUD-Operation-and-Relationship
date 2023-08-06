@@ -32,15 +32,20 @@ public class Main {
     private static void saveBook() {
         Book book=new Book("B001","Hath Pana",2500);
 
-        //start session
-        Session session= FactoryConfiguration.getInstance().getSession(); //Session is Interface (Therefore can't initialize with new keyword)
+        /* Need to use try with resource --> firstly try session,
+        Another time can't run the Session, after that close the session object */
 
-        Transaction transaction=session.beginTransaction(); //begin transaction
-        session.persist(book); //add data to table
+        //start session --> Session is Interface (Therefore can't initialize with new keyword)
+        try(Session session= FactoryConfiguration.getInstance().getSession();) {
 
-        transaction.commit(); //commit that transaction
+            Transaction transaction = session.beginTransaction(); //begin transaction
+            session.persist(book); //add data to table
 
-        session.close(); //close the session
+            transaction.commit(); //commit that transaction
+
+            session.close(); //close the session
+
+        }
 
     }
 
@@ -50,6 +55,7 @@ public class Main {
         List<Book> bookList= query.list();
         for (Book book:bookList) {
             System.out.println(book);
+            //table -->add code here
         }
     }
 
