@@ -30,7 +30,7 @@ public class Main {
 
     //need session for every new method call
     private static void saveBook() {
-        Book book=new Book("B002","Hath Pana",2500);
+        Book book=new Book("B001","Hath Pana",2500);
 
         //start session
         Session session= FactoryConfiguration.getInstance().getSession(); //Session is Interface (Therefore can't initialize with new keyword)
@@ -71,8 +71,12 @@ public class Main {
     private static void findBook() {
         Session session= FactoryConfiguration.getInstance().getSession();
 
-        Book book = session.load(Book.class, "B001");
-        System.out.println(book);
+         //  Book book = session.load(Book.class, "B001");
+
+        //-----------another way------------
+        String id="B001";
+        Book book1=session.get(Book.class,id);
+        System.out.println(book1);
 
     }
 
